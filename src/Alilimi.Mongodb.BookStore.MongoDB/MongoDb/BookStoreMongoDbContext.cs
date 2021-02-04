@@ -2,6 +2,7 @@
 using Alilimi.Mongodb.BookStore.Users;
 using Volo.Abp.Data;
 using Volo.Abp.MongoDB;
+using Alilimi.Mongodb.BookStore.Books;
 
 namespace Alilimi.Mongodb.BookStore.MongoDB
 {
@@ -9,6 +10,7 @@ namespace Alilimi.Mongodb.BookStore.MongoDB
     public class BookStoreMongoDbContext : AbpMongoDbContext
     {
         public IMongoCollection<AppUser> Users => Collection<AppUser>();
+        public IMongoCollection<Book> Books => Collection<Book>();
 
         protected override void CreateModel(IMongoModelBuilder modelBuilder)
         {
